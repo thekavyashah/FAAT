@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Book a Table | FAAT</title>
+    <title>Book Table | FAAT</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="contact-page"><!-- light theme like contact page -->
@@ -21,7 +21,7 @@
           <a href="./menu.html">Menus</a>
           <a href="./aboutus.html">About</a>
           <a href="#">Catering</a>
-          <a href="./bookatable.html">Book a Table</a>
+          <a href="./bookatable.html">Book Table</a>
           <a href="#">Gallery</a>
           <a href="#" class="order-button"><span class="btn">Order Online</span></a>
         </div>
@@ -46,7 +46,7 @@
         <a href="./menu.html">Menus</a>
         <a href="./aboutus.html">About</a>
         <a href="#">Catering</a>
-        <a href="./bookatable.html">Book a Table</a>
+        <a href="./bookatable.html">Book Table</a>
         <a href="#">Gallery</a>
         <a href="#">Careers</a>
         <a href="#">Press</a>
@@ -83,7 +83,7 @@
           <form class="reserve-form" novalidate>
             <div class="form-row">
               <label for="guests">Total Guests</label>
-              <input id="guests" name="guests" type="number" min="1" max="20" step="1" required placeholder="e.g., 4" />
+              <input id="guests" name="guests" type="number" min="1" max="20" step="1" required placeholder="Total Guests(4Max/Book Table)" />
             </div>
 
             <div class="form-row">
@@ -94,7 +94,7 @@
             <div class="form-row">
               <label for="sitting">Select Sitting</label>
               <select id="sitting" name="sitting" required>
-                <option value="" disabled selected>Select</option>
+                <option value="" disabled selected>Select Sitting</option>
                 <option>Indoor</option>
                 <option>Outdoor</option>
                 <option>Window</option>
@@ -106,7 +106,7 @@
             <div class="form-row">
               <label for="time">Select Time</label>
               <select id="time" name="time" required>
-                <option value="" disabled selected>Select</option>
+                <option value="" disabled selected>Time Slot</option>
                 <option>12:00 PM</option>
                 <option>12:30 PM</option>
                 <option>1:00 PM</option>
@@ -118,10 +118,12 @@
               </select>
             </div>
 
-            <div class="form-row">
+            <!-- <div class="form-row">
               <label for="notes">Notes (optional)</label>
               <textarea id="notes" name="notes" rows="3" placeholder="Allergies, high chair, special occasion…"></textarea>
-            </div>
+            </div> -->
+
+            <p>Please note that weekends are walk-ins only.</p>
 
             <button type="submit" class="btn" aria-label="Submit reservation">Reserve</button>
           </form>
@@ -131,7 +133,7 @@
       <!-- Mobile sticky actions (optional, reuse) -->
       <div class="mobile-cta" aria-label="Quick actions">
         <a href="#" class="btn" id="ctaOrder">Order Online</a>
-        <a href="./bookatable.html" class="btn" id="ctaReserve">Reservation</a>
+        <a href="./bookatable.html" class="btn" id="ctaReserve">Book Table</a>
       </div>
     </main>
 
@@ -156,7 +158,7 @@
           <a href="#">Email SignUp</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Accessibility Statement</a>
-          <a href="./bookatable.html" class="order-button"><span class="footer-btn">Reservation</span></a>
+          <a href="./bookatable.html" class="order-button"><span class="footer-btn">Book Table</span></a>
         </div>
       </div>
     </footer>
