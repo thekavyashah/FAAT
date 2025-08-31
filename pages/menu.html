@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | FAAT</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="./menu.html">Menus</a>
+          <a href="./aboutus.html">About</a>
+          <a href="#">Catering</a>
+          <a href="./bookatable.html">Book a Table</a>
+          <a href="#">Gallery</a>
+          <a href="#" class="order-button">
+            <span class="btn">Order Online</span>
+          </a>
+        </div>
+
+        <div class="sidebtn-wrapper">
+          <div class="sidebtn">
+            <button
+              type="button"
+              class="nav-toggle-btn"
+              id="openMenu"
+              aria-label="Open menu"
+            >
+              <span class="nav-toggle-btn__line"></span>
+              <span class="nav-toggle-btn__line"></span>
+              <span class="nav-toggle-btn__line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="content">
+        <section class="slider">
+          <div class="header">
+            <h1 id="h1">Menus</h1>
+          </div>
+          <div class="slides">
+            <div class="slide">
+              <img src="../assets/slider.png" alt="Slide 1" />
+            </div>
+            <div class="slide">
+              <img src="../assets/slider1.png" alt="Slide 2" />
+            </div>
+            <div class="slide">
+              <img src="../assets/slider2.png" alt="Slide 3" />
+            </div>
+          </div>
+
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </section>
+
+        <section class="menu-wrap">
+          <!-- Category filter (optional) -->
+          <div class="menu-filter" aria-label="Filter menu by category">
+            <button class="filter-btn is-active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="signature">
+              Signature
+            </button>
+            <button class="filter-btn" data-filter="mocktails">
+              Mocktails
+            </button>
+            <button class="filter-btn" data-filter="small-plates">
+              Small Plates
+            </button>
+            <button class="filter-btn" data-filter="mains">Mains</button>
+          </div>
+
+          <!-- Menu grid -->
+          <ul class="menu-grid" role="list">
+            <!-- Card -->
+            <li class="menu-card" data-category="signature mocktails">
+              <figure class="menu-media">
+                <img
+                  src="../assets/slider.png"
+                  alt="Pina Colada"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="menu-info">
+                <div class="menu-title-row">
+                  <h3 class="menu-title">Pina Colada</h3>
+                  <span class="menu-price">$3.5</span>
+                </div>
+                <p class="menu-desc">
+                  Smoked avocado, cured salmon, akami tuna, hamachi, honey
+                  caviar.
+                </p>
+                <div class="menu-meta">
+                  <span class="chip chip-new" aria-label="New item">New</span>
+                  <span class="chip" title="Vegetarian" aria-label="Vegetarian"
+                    >Veg</span
+                  >
+                </div>
+              </div>
+            </li>
+
+            <li class="menu-card" data-category="mocktails">
+              <figure class="menu-media">
+                <img
+                  src="../assets/slider1.png"
+                  alt="Citrus Cooler"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="menu-info">
+                <div class="menu-title-row">
+                  <h3 class="menu-title">Citrus Cooler</h3>
+                  <span class="menu-price">$4.0</span>
+                </div>
+                <p class="menu-desc">
+                  Yuzu, lime zest, tonic mist, crushed ice.
+                </p>
+                <div class="menu-meta">
+                  <span
+                    class="chip"
+                    title="Gluten Free"
+                    aria-label="Gluten Free"
+                    >GF</span
+                  >
+                </div>
+              </div>
+            </li>
+
+            <li class="menu-card" data-category="small-plates">
+              <figure class="menu-media">
+                <img
+                  src="../assets/slider2.png"
+                  alt="Crispy Lotus"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="menu-info">
+                <div class="menu-title-row">
+                  <h3 class="menu-title">Crispy Lotus</h3>
+                  <span class="menu-price">$6.5</span>
+                </div>
+                <p class="menu-desc">
+                  Chili jaggery glaze, sesame, spring onion.
+                </p>
+                <div class="menu-meta">
+                  <span class="chip" aria-label="Spicy">Spicy</span>
+                  <span class="chip" aria-label="Vegan">Vegan</span>
+                </div>
+              </div>
+            </li>
+
+            <!-- Duplicate/extend as needed -->
+          </ul>
+        </section>
+      </div>
+      <!-- Mobile sticky actions -->
+      <div class="mobile-cta" aria-label="Quick actions">
+        <a href="#" class="btn" id="ctaOrder">Order Online</a>
+        <a href="./bookatable.html" class="btn" id="ctaReserve">Reservation</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="socials">
+        <div>
+          <ul>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/instagram.png"
+                alt="Instagram"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/facebook.png"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="./contactus.html">Contact</a>
+          <a href="#">Email SignUp</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Accessibility Statement</a>
+          <a href="./bookatable.html" class="order-button">
+            <span class="footer-btn">Reservation</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu" aria-hidden="true">
+      <button class="close-btn" id="closeMenu" aria-label="Close menu">
+        &times;
+      </button>
+      <nav class="side-nav-links">
+        <a href="../index.html">Home</a>
+        <a href="./pages/menu.html">Menus</a>
+        <a href="/aboutus.html">About</a>
+        <a href="#">Catering</a>
+        <a href="./bookatable.html">Book a Table</a>
+        <a href="#">Gallery</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="./contactus.html">Contact</a>
+        <a href="#">Email SignUp</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Accessibility Statement</a>
+      </nav>
+      <div class="socials">
+        <div>
+          <ul>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/instagram.png"
+                alt="Instagram"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/facebook.png"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="../app.js" defer></script>
+  </body>
+</html>

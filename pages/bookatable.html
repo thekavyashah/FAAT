@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Book a Table | FAAT</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="contact-page"><!-- light theme like contact page -->
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="./menu.html">Menus</a>
+          <a href="./aboutus.html">About</a>
+          <a href="#">Catering</a>
+          <a href="./bookatable.html">Book a Table</a>
+          <a href="#">Gallery</a>
+          <a href="#" class="order-button"><span class="btn">Order Online</span></a>
+        </div>
+
+        <div class="sidebtn-wrapper">
+          <div class="sidebtn">
+            <button type="button" class="nav-toggle-btn" id="openMenu" aria-label="Open menu">
+              <span class="nav-toggle-btn__line"></span>
+              <span class="nav-toggle-btn__line"></span>
+              <span class="nav-toggle-btn__line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu" aria-hidden="true">
+      <button class="close-btn" id="closeMenu" aria-label="Close menu">&times;</button>
+      <nav class="side-nav-links">
+        <a href="../index.html">Home</a>
+        <a href="./menu.html">Menus</a>
+        <a href="./aboutus.html">About</a>
+        <a href="#">Catering</a>
+        <a href="./bookatable.html">Book a Table</a>
+        <a href="#">Gallery</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="./contactus.html">Contact</a>
+        <a href="#">Email SignUp</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Accessibility Statement</a>
+      </nav>
+      <div class="socials">
+        <div>
+          <ul>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+              <img src="../assets/instagram.png" alt="Instagram" class="social-icon" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener">
+              <img src="../assets/facebook.png" alt="Facebook" class="social-icon" />
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="reserve">
+        <h1 class="reserve-title">Book <span class="highlight">a Table</span></h1>
+
+        <div class="reserve-grid">
+          <!-- Left: Image -->
+          <figure class="reserve-media">
+            <img src="../assets/slider1.png" alt="Dining room ambience" loading="lazy" />
+          </figure>
+
+          <!-- Right: Form -->
+          <form class="reserve-form" novalidate>
+            <div class="form-row">
+              <label for="guests">Total Guests</label>
+              <input id="guests" name="guests" type="number" min="1" max="20" step="1" required placeholder="e.g., 4" />
+            </div>
+
+            <div class="form-row">
+              <label for="date">Date</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+
+            <div class="form-row">
+              <label for="sitting">Select Sitting</label>
+              <select id="sitting" name="sitting" required>
+                <option value="" disabled selected>Select</option>
+                <option>Indoor</option>
+                <option>Outdoor</option>
+                <option>Window</option>
+                <option>Bar</option>
+                <option>Chef’s Counter</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="time">Select Time</label>
+              <select id="time" name="time" required>
+                <option value="" disabled selected>Select</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>1:00 PM</option>
+                <option>1:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+                <option>8:30 PM</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Allergies, high chair, special occasion…"></textarea>
+            </div>
+
+            <button type="submit" class="btn" aria-label="Submit reservation">Reserve</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Mobile sticky actions (optional, reuse) -->
+      <div class="mobile-cta" aria-label="Quick actions">
+        <a href="#" class="btn" id="ctaOrder">Order Online</a>
+        <a href="./bookatable.html" class="btn" id="ctaReserve">Reservation</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="socials">
+        <div>
+          <ul>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+              <img src="../assets/instagram.png" alt="Instagram" class="social-icon" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener">
+              <img src="../assets/facebook.png" alt="Facebook" class="social-icon" />
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="./contactus.html">Contact</a>
+          <a href="#">Email SignUp</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Accessibility Statement</a>
+          <a href="./bookatable.html" class="order-button"><span class="footer-btn">Reservation</span></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../app.js" defer></script>
+
+    <!-- Page-specific helpers -->
+    <script src="../app.js"></script>
+    </script>
+  </body>
+</html>

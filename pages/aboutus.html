@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | FAAT</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="./menu.html">Menus</a>
+          <a href="./aboutus.html">About</a>
+          <a href="#">Catering</a>
+          <a href="./bookatable.html">Book a Table</a>
+          <a href="#">Gallery</a>
+          <a href="#" class="order-button">
+            <span class="btn">Order Online</span>
+          </a>
+        </div>
+
+        <div class="sidebtn-wrapper">
+          <div class="sidebtn">
+            <button
+              type="button"
+              class="nav-toggle-btn"
+              id="openMenu"
+              aria-label="Open menu"
+            >
+              <span class="nav-toggle-btn__line"></span>
+              <span class="nav-toggle-btn__line"></span>
+              <span class="nav-toggle-btn__line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="content">
+        <section class="slider">
+          <div class="header">
+            <h1 id="h1">About Us</h1>
+          </div>
+          <div class="slides">
+            <div class="slide">
+              <img src="../assets/slider.png" alt="Slide 1" />
+            </div>
+            <div class="slide">
+              <img src="../assets/slider1.png" alt="Slide 2" />
+            </div>
+            <div class="slide">
+              <img src="../assets/slider2.png" alt="Slide 3" />
+            </div>
+          </div>
+
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </section>
+
+        <section class="split-col">
+          <div class="split-right">
+            <div class="img-container">
+              <img
+                src="../assets/ourfood.png"
+                alt="Delicious Food"
+                class="split-img"
+              />
+            </div>
+          </div>
+          <div class="split-left">
+            <h2 class="h2 split-heading">OUR Story</h2>
+            <p>
+              Since 2002, Little Ruby’s has brought Australian cafe culture to
+              New York City, offering casual, locally sourced cuisine, specialty
+              drinks, and a full coffee program.
+            </p>
+            <span class="content-btn">About Us</span>
+          </div>
+        </section>
+
+        <section class="split-col">
+          <div class="split-left">
+            <h2 class="h2 split-heading">food and drink</h2>
+            <p>
+              Open for brekkie, lunch, and dinner 7 days a week, Ruby’s iconic
+              menu features our signature bronte burger, taste-driven pasta,
+              bowls and salads, and brunch classics like ricotta hotcakes.
+            </p>
+            <span class="content-btn">Menus</span>
+          </div>
+          <div class="split-right">
+            <div class="img-container">
+              <img
+                src="../assets/ourfood.png"
+                alt="Delicious Food"
+                class="split-img"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="split-col">
+          <div class="split-right">
+            <div class="img-container">
+              <img
+                src="../assets/ourfood.png"
+                alt="Delicious Food"
+                class="split-img"
+              />
+            </div>
+          </div>
+          <div class="split-left">
+            <h2 class="h2 split-heading">Pickup and Delivery</h2>
+            <p>
+              Open 7 days a week for brekkie, lunch, and dinner in Soho, East
+              Village, Murray Hill, and West Village.
+            </p>
+          </div>
+        </section>
+      </div>
+      <!-- Mobile sticky actions -->
+      <div class="mobile-cta" aria-label="Quick actions">
+        <a href="#" class="btn" id="ctaOrder">Order Online</a>
+        <a href="./bookatable.html" class="btn" id="ctaReserve">Reservation</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="socials">
+        <div>
+          <ul>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/instagram.png"
+                alt="Instagram"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/facebook.png"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="./contactus.html">Contact</a>
+          <a href="#">Email SignUp</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Accessibility Statement</a>
+          <a href="./bookatable.html" class="order-button">
+            <span class="footer-btn">Reservation</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu" aria-hidden="true">
+      <button class="close-btn" id="closeMenu" aria-label="Close menu">
+        &times;
+      </button>
+      <nav class="side-nav-links">
+        <a href="../index.html">Home</a>
+        <a href="./menu.html">Menus</a>
+        <a href="./aboutus.html">About</a>
+        <a href="#">Catering</a>
+        <a href="./bookatable.html">Book a Table</a>
+        <a href="#">Gallery</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="./contactus.html">Contact</a>
+        <a href="#">Email SignUp</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Accessibility Statement</a>
+      </nav>
+      <div class="socials">
+        <div>
+          <ul>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/instagram.png"
+                alt="Instagram"
+                class="social-icon"
+              />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener">
+              <img
+                src="../assets/facebook.png"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="../app.js" defer></script>
+  </body>
+</html>

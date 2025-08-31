@@ -1,0 +1,1206 @@
+/* ---------------- Fonts ---------------- */
+@font-face {
+  font-family: "DkerPoster";
+  src: url("./fonts/dker_poster/Dker-Poster.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unicorn Flakes";
+  src: url("./fonts/UniCorn_Flakes/ALtxYxb5S7WUxoBSlzNC_Unicorn Flakes.ttf")
+    format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Bilo Light";
+  src: url("./fonts/Bilo/p4zpP5cQC2RND6C7b3kH_Bilo-Light.otf")
+    format("opentype");
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Antonio Script";
+  src: url("./fonts/anthonio_script/AnthonioScript.ttf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("./fonts/Raleway/raleway.regular.ttf") format("opentype");
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 15px 60px;
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  z-index: 10;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links {
+  display: none;
+}
+
+.sidebtn {
+  display: flex;
+}
+
+@media (min-width: 1135px) {
+  .nav-links {
+    display: flex;
+  }
+  .sidebtn {
+    display: none;
+  }
+}
+
+.nav-links {
+  align-items: center;
+  background-color: #000;
+  font-size: 22px;
+  text-transform: capitalize;
+  border: 10px solid #547390;
+  border-image-source: url("./assets/blackbtn.png");
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  border-image-outset: 5px;
+  padding: 0.4rem 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  letter-spacing: 0.08rem;
+  font-family: "Raleway";
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: 10px solid transparent;
+  border-image-source: url("./assets/btn.png");
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  border-image-outset: 5px;
+  background-color: #ec0909;
+  padding: 0.1rem;
+  box-sizing: border-box;
+}
+.btn:hover {
+  border-image-source: url("./assets/whitebtn.png");
+  color: #000;
+  background-color: #fff;
+}
+.nav-links a.order-button {
+  letter-spacing: 0.1rem;
+  font-size: 1.1rem;
+}
+
+/* Toggle button */
+@media (max-width: 1135px) {
+  .nav-toggle-btn__line {
+    background-color: #6f6a6a;
+    height: 2px;
+    margin-bottom: 6px;
+  }
+}
+.nav-toggle-btn {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.nav-toggle-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(236, 9, 9, 0.45);
+  border-radius: 6px;
+}
+.nav-toggle-btn__line {
+  width: 25px;
+  height: 2px;
+  background-color: #ec0909;
+  display: block;
+  margin: 4px 0;
+  transition: all 0.3s ease-in-out;
+}
+.nav-toggle-btn:hover .nav-toggle-btn__line {
+  background-color: #ec0909;
+}
+.nav-toggle-btn.is-open .nav-toggle-btn__line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle-btn.is-open .nav-toggle-btn__line:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle-btn.is-open .nav-toggle-btn__line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.logo-img {
+  height: 150px;
+  width: 160px;
+}
+@media (max-width: 768px) {
+  .logo-img {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+/* ---------------- Side Menu ---------------- */
+.side-menu {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform 0.45s ease;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.side-menu.active {
+  transform: translateY(0);
+}
+body.menu-open {
+  overflow: hidden;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #ec0909;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 6px;
+}
+
+.side-nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-top: 80px;
+  padding: 24px clamp(20px, 5vw, 48px);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+.side-nav-links a {
+  color: #000;
+  font-family: "Raleway";
+  font-size: clamp(18px, 2.6vw, 26px);
+  text-decoration: none;
+  letter-spacing: 0.08rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.side-nav-links a:hover {
+  color: #ec0909;
+}
+.side-nav-links .order-button .btn {
+  font-size: clamp(16px, 2.2vw, 20px);
+}
+
+/* ---------------- Slider ---------------- */
+.content {
+  margin-top: 20px;
+  padding: 3px;
+  text-align: center;
+}
+.slider {
+  position: relative;
+}
+.slides {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: 700px;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+}
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 1;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  -webkit-mask-image: url("./assets/sliderbg.png");
+  mask-image: url("./assets/sliderbg.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+@media (max-width: 768px) {
+  .slides {
+    aspect-ratio: auto;
+    height: 700px;
+  }
+  .slide {
+    height: 100%;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(12px, 2.5vw, 28px);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+.dot {
+  height: 16px;
+  width: 16px;
+  margin: 0 5px;
+  background: #fff;
+  -webkit-mask: url("./assets/dotindicator.png") no-repeat center;
+  -webkit-mask-size: contain;
+  mask: url("./assets/dotindicator.png") no-repeat center;
+  mask-size: contain;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.dot.active {
+  background: #ec0909;
+}
+
+/* ---------------- Split Sections ---------------- */
+.split-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1100px;
+  max-width: calc(100% - 2rem);
+  margin: 6rem auto;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.split-col.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.split-left {
+  flex: 1;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+.h2,
+#h1,
+.contact-content h1 {
+  font-family: "Antonio Script", cursive;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.split-heading {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+p {
+  font-family: "Raleway";
+  color: #000;
+  font-size: 20px;
+}
+.split-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  padding: 10px;
+  border: 3px solid rgba(236, 9, 9, 0.7);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 500px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  -webkit-mask-image: url("./assets/sliderbg.png");
+  mask-image: url("./assets/sliderbg.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+@media (max-width: 768px) {
+  .split-col {
+    flex-direction: column;
+    text-align: center;
+    margin: 4rem auto;
+  }
+  .split-left,
+  .split-right {
+    width: 100%;
+  }
+  .img-container {
+    height: 320px;
+    max-height: none;
+  }
+  .split-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 0;
+  }
+}
+
+/* ---------------- Buttons & Footer ---------------- */
+.content-btn {
+  display: inline-block;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: 10px solid transparent;
+  border-image-source: url("./assets/btn.png");
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  border-image-outset: 5px;
+  background-color: #ec0909;
+  padding: 0.1rem;
+  box-sizing: border-box;
+  letter-spacing: 0.1rem;
+  font-family: "Raleway";
+  text-decoration: none;
+  font-size: 18px;
+}
+.content-btn:hover {
+  border-image-source: url("./assets/blackbtn.png");
+  color: #fff;
+  background-color: #000;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 10;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-transform: capitalize;
+  padding: 0.4rem 0;
+  row-gap: 8px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  letter-spacing: 0.08rem;
+  font-family: "Raleway";
+}
+
+.footer-btn {
+  display: inline-block;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: 10px solid transparent;
+  border-image-source: url("./assets/btn.png");
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  border-image-outset: 5px;
+  background-color: #ec0909;
+  padding: 0.1rem;
+  box-sizing: border-box;
+}
+.footer-btn:hover {
+  border-image-source: url("./assets/whitebtn.png");
+  color: #000;
+  background-color: #fff;
+}
+
+@media (max-width: 1135px) {
+  .footer {
+    justify-content: center;
+    gap: 16px;
+  }
+  .footer-right {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    row-gap: 10px;
+  }
+
+  .footer-links a {
+    margin: 0 10px;
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+  max-width: 100%; /* Prevent exceeding parent width */
+  box-sizing: border-box;
+}
+.socials ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  background-color: #000;
+  border-radius: 20px;
+  padding: 5px;
+}
+.socials ul a {
+  text-decoration: none;
+}
+
+/* ---------------- Contact Page (Light-only) ---------------- */
+.contact-page {
+  background: #fff;
+  color: #000;
+}
+
+/* Force light nav on contact page (keep brand look) */
+.contact-page .nav-links {
+  background-color: #000;
+  border-image-source: url("./assets/blackbtn.png");
+}
+.contact-page .nav-links a {
+  color: #fff;
+}
+
+/* Contact section light styles */
+.contact-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+}
+.contact-content h1 {
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 250px;
+  margin-bottom: 50px;
+  font-size: 4rem;
+  font-family: "Antonio Script", cursive;
+  font-weight: bold;
+}
+.contact-content h1 .highlight {
+  color: #ec0909;
+}
+@media (max-width: 768px) {
+  .contact-content h1 {
+    font-size: 2rem;
+    margin-top: 120px;
+    font-weight: bold;
+  }
+}
+
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+}
+.contact-form label {
+  font-family: "Raleway";
+  color: #000;
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  font-family: "Raleway";
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 14px;
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #ec0909;
+  box-shadow: 0 0 0 3px rgba(236, 9, 9, 0.15);
+  outline: none;
+}
+.contact-form ::placeholder {
+  color: #666;
+}
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.contact-form select {
+  appearance: none;
+  background-color: #fff;
+  color: #000;
+}
+.contact-form .btn {
+  width: 150px;
+  text-align: center;
+  margin: 10px auto 0;
+  display: block;
+  font-family: "Raleway";
+  font-size: large;
+}
+@media (max-width: 768px) {
+  .contact-form .btn {
+    width: 120px;
+  }
+}
+
+/* === Contact two-column layout === */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  box-sizing: border-box;
+}
+
+/* Keep your existing .contact-form styles;
+   just let it grow to fill the column */
+.contact-form {
+  max-width: none; /* override previous 500px cap */
+  width: 100%;
+}
+
+/* Map column */
+.map-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.map-card {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border: 3px solid rgba(236, 9, 9, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Reuse your masked image look on the map for brand consistency */
+.map-card iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  -webkit-mask-image: url("./assets/sliderbg.png");
+  mask-image: url("./assets/sliderbg.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Optional action buttons under map */
+.map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .map-card {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-card {
+    height: 320px;
+  }
+}
+
+
+/* Header overlay helper */
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+}
+#h1 {
+  font-family: "Antonio Script", cursive;
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  font-weight: bold;
+}
+
+/* ===== Mobile sticky CTA (Order + Reservation) ===== */
+@media (max-width: 768px) {
+  .mobile-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 12px calc(env(safe-area-inset-bottom) + 10px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-cta .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  body {
+    padding-bottom: 130px;
+  }
+
+  body.menu-open .mobile-cta {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-cta {
+    display: none;
+  }
+}
+
+.btn,
+.btn:link,
+.btn:visited,
+.btn:hover,
+.btn:active {
+  text-decoration: none;
+}
+
+/* <--- MENU ---> */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.dish-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px; /* spacing between image + description */
+  padding: 20px;
+  margin: 5px 0;
+  border: 2px solid #eee; /* light border */
+  border-radius: 12px;
+  background: #fafafa;
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Dish image */
+.img-dish {
+  flex: 0 0 180px; /* fixed image column */
+  height: 150px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.img-dish img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dish description */
+.dish-des {
+  flex: 1;
+  text-align: left;
+}
+
+.dish-des h3 {
+  font-family: "Antonio Script", cursive;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #ec0909;
+}
+
+.dish-des p {
+  font-family: "Raleway";
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Price styling */
+.dish-des p:last-child {
+  font-weight: bold;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dish-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .img-dish {
+    width: 100%;
+    height: 200px;
+  }
+
+  .dish-des {
+    margin-top: 12px;
+  }
+}
+
+/* ===== Menu (revamp) ===== */
+.menu-wrap {
+  margin: 40px auto 80px;
+  width: min(1100px, calc(100% - 2rem));
+}
+
+/* Filter buttons */
+.menu-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 12px 0 24px;
+}
+.filter-btn {
+  border: 10px solid transparent;
+  border-image-source: url("../assets/btn.png");
+  border-image-slice: 30;
+  border-image-repeat: stretch;
+  border-image-outset: 5px;
+  background: #ec0909;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px 14px;
+  font-family: "Raleway";
+  letter-spacing: 0.06rem;
+  font-size: 0.95rem;
+}
+.filter-btn:hover,
+.filter-btn.is-active {
+  border-image-source: url("../assets/whitebtn.png");
+  background: #fff;
+  color: #000;
+}
+
+/* Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.menu-card {
+  grid-column: span 6; /* 2 per row on desktop */
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  padding: 14px;
+  border: 2px solid #eee;
+  border-radius: 14px;
+  background: #fafafa;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.menu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* Media (image) with FAAT mask */
+.menu-media {
+  margin: 0;
+  width: 160px;
+  height: 140px;
+  overflow: hidden;
+  border: 3px solid rgba(236, 9, 9, 0.7);
+  border-radius: 12px;
+  padding: 10px;          /* 🔹 Added padding */
+  box-sizing: border-box; /* Ensures padding fits inside width/height */
+}
+
+.menu-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  -webkit-mask-image: url("../assets/sliderbg.png");
+  mask-image: url("../assets/sliderbg.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Text block */
+.menu-info {
+  min-width: 0;
+}
+
+.menu-title-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.menu-title {
+  font-family: "Antonio Script";
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+  color: #ec0909;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #000;
+  padding-left: 8px;
+}
+
+.menu-desc {
+  font-family: "Raleway";
+  margin: 6px 0 10px;
+  color: #333;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+/* Chips / tags */
+.menu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  border: 1px solid #ddd;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.02rem;
+  background: #fff;
+}
+.chip-new {
+  border-color: #ec0909;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .menu-card { grid-column: span 12; } /* 1 per row */
+}
+
+@media (max-width: 640px) {
+  .menu-card {
+    grid-template-columns: 1fr; /* image above text */
+    text-align: left;
+  }
+  .menu-media {
+    width: 100%;
+    height: 200px;
+  }
+  .menu-title { font-size: 1.4rem; }
+}
+
+/* ===== Book a Table ===== */
+.reserve {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 20px 0 80px;
+  background: #fff;
+}
+
+.reserve-title {
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 220px; /* aligns under fixed navbar like contact page */
+  margin-bottom: 30px;
+  font-size: 3.2rem;
+  font-family: "Antonio Script", cursive;
+  font-weight: 700;
+}
+.reserve-title .highlight { color: #ec0909; }
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* image slightly larger */
+  gap: 28px;
+  align-items: start;
+}
+
+/* Left media with FAAT styling */
+.reserve-media {
+  margin: 0;
+  width: 100%;
+  height: 540px;
+  padding: 10px;              
+  border: 3px solid rgba(236, 9, 9, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.reserve-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  /* brand mask */
+  -webkit-mask-image: url("../assets/sliderbg.png");
+  mask-image: url("../assets/sliderbg.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Right form */
+.reserve-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+}
+.reserve-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.reserve-form label {
+  font-family: "Raleway";
+  color: #000;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+.reserve-form input,
+.reserve-form select,
+.reserve-form textarea {
+  font-family: "Raleway";
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 14px;
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.reserve-form input:focus,
+.reserve-form select:focus,
+.reserve-form textarea:focus {
+  border-color: #ec0909;
+  box-shadow: 0 0 0 3px rgba(236, 9, 9, 0.15);
+  outline: none;
+}
+
+/* Make notes wider + taller */
+#notes { 
+  grid-column: 1 / -1;   /* span full width */
+  min-height: 160px;     /* taller textarea */
+}
+
+/* Center the button */
+.reserve-form .btn {
+  grid-column: 1 / -1;   /* span full width */
+  justify-self: center;  /* center horizontally */
+  font-size: large;
+  margin-top: 10px;
+  width: 180px;          /* fixed width for symmetry */
+}
+
+/* Responsive stacking */
+@media (max-width: 1024px) {
+  .reserve-grid {
+    grid-template-columns: 1fr; /* stack */
+  }
+  .reserve-media { height: 420px; }
+  .reserve-form { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .reserve-title { font-size: 2rem; margin-top: 120px; }
+  .reserve-media { height: 300px; }
+  .reserve-form { grid-template-columns: 1fr; }
+}
